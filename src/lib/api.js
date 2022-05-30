@@ -201,6 +201,7 @@ export async function getMainImage(){
             data{
               attributes{
               	url
+                name
               }
             }
           }
