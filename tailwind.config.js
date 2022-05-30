@@ -4,8 +4,11 @@ const colors = require('tailwindcss/colors')
 module.exports = {
   future: {
   },
-  purge: {
-  },
+  purge: [
+    "./src/**/*.{js,ts,jsx,tsx}",
+    // Add more here
+  ],
+  darkMode: 'class',
   theme: {
   },
   variants: {},
