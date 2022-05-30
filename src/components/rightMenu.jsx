@@ -14,13 +14,13 @@ import LastPosts from './lastPosts'
 
 export default function RightMenu(props) {
   const menuBlogs = props.menuBlogs
- 
+
   return (
 
     <div className="hidden mt-10 ml-5 w-1/4 md:block">
       <div class="flex justify-around my-4">
         <div className="flex">
-          <div
+          <a href='https://www.facebook.com/ohjakslodko'><div
             class="mx-2  bg-[#1877f2] border hover:bg-[#1877f2] w-12 h-12 fill-[#1877f2] hover:fill-white border-blue-200 rounded-full flex items-center justify-center shadow-xl hover:shadow-blue-500/50 cursor-pointer"
           >
             <svg
@@ -33,7 +33,7 @@ export default function RightMenu(props) {
                 d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z"
               ></path>
             </svg>
-          </div>
+          </div></a>
           <a href='https://www.instagram.com/ohjakslodko/'>
             <div
               class="border hover:bg-[#bc2a8d] w-12 h-12 fill-[#bc2a8d] hover:fill-white border-pink-200 rounded-full flex items-center justify-center shadow-xl hover:shadow-pink-500/50 cursor-pointer"
@@ -53,7 +53,7 @@ export default function RightMenu(props) {
                 ></path>
               </svg>
             </div>
-            </a>
+          </a>
         </div>
       </div>
       <div className="mx-auto text-center text-2xl mt-10">
@@ -62,7 +62,7 @@ export default function RightMenu(props) {
 
       <div>
         <ul className="list-reset flex flex-col">
-          <LastPosts menuBlogs={menuBlogs}/>
+          <LastPosts menuBlogs={menuBlogs} />
         </ul>
       </div>
     </div>

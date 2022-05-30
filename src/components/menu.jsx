@@ -30,7 +30,7 @@ export default function Menu({ menu }) {
                 </a>
               </div>
             </li>
-            <li>
+            {/* <li>
               <div class=" font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center">
                 <a href="/about-me">
                   O mnie
@@ -43,7 +43,7 @@ export default function Menu({ menu }) {
                   Kontakt
                 </a>
               </div>
-            </li>
+            </li> */}
 
 
 
