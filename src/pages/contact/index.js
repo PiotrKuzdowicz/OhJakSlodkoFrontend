@@ -46,7 +46,7 @@ export default function Home({ mainImage, menuPosts, menu }) {
 
       <Navbar />
       <div className="relative  pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8 flex  flex-col">
-        <TopPage menu={menu} />
+      <TopPage menu={menu} mainImage={mainImage}/>
         <div className='flex space-between container center mx-auto px-5 mt-10 md:w-5/6 lg:w-5/6 xl:w-4/6 2xl:w-4/6'>
           <motion.div initial="initial" animate="animate" exit={{ opacity: 0 }} variants={stagger} className="mt-12 gird gap-5 mx-auto w-screen md:w-3/4 grow">
             <h1>Kontakt</h1>

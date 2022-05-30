@@ -50,7 +50,7 @@ const BlogPage = ({ posts, previewMode, menuPosts, category, menu, mainImage, ca
       <Navbar />
 
       <div className="relative  pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8 flex  flex-col">
-        <TopPage menu={menu} />
+        <TopPage menu={menu} mainImage={mainImage} />
         {/* <h1 className='text-center mx-auto mt-10 md:w-5/6 lg:w-5/6 xl:w-4/6 2xl:w-4/6 text-5xl'>Kategoria <b>{categoryName[0].attributes.name}</b></h1> */}
         <div className='flex center mx-auto mt-10 md:w-5/6 lg:w-5/6 xl:w-4/6 2xl:w-4/6'>
           <motion.div initial="initial" animate="animate" exit={{ opacity: 0 }} variants={stagger} className="mx-auto w-screen md:w-3/4 ">
