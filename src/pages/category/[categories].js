@@ -164,8 +164,9 @@ export const getStaticProps = async (context) => {
       category: category,
       categoryName: categoryName,
       menu: menu,
-      mainImage: mainImage
-    },
+      mainImage: mainImage,
+      
+    }, revalidate: 10, // In seconds
   }
 
 }

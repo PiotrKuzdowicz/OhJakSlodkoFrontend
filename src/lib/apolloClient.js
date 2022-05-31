@@ -6,7 +6,12 @@ const apolloClient = new ApolloClient({
   link: new HttpLink({
     uri: process.env.STRAPI_GRAPHQL_ENDPOINT
   }),
-  cache: new InMemoryCache()
+  cache: new InMemoryCache(),
+  defaultOptions: {
+      query: {
+          fetchPolicy: 'no-cache',
+      },
+  }
 })
 
 export default apolloClient

@@ -70,10 +70,10 @@ export const getStaticProps = async () => {
       mainImage,
       menuPosts,
       menu,
-      revalidate: 1
+     
 
 
-    }
+    }, revalidate: 10, // In seconds
   }
 
 }

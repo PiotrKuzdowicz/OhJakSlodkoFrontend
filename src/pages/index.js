@@ -19,7 +19,6 @@ const Home = (props) => {
   const [isLoading, setLoading] = useState(false); //State for the loading indicator
   const startLoading = () => setLoading(true);
   const stopLoading = () => setLoading(false);
-  console.log(props.pagepage);
   /*
     Posts fetching happens after page navigation, 
     so we need to switch Loading state on Router events.
@@ -137,6 +136,7 @@ const Home = (props) => {
 //   }
 // }
 export const getServerSideProps = async ({query}) => {
+  
   const topPageData = await getTopPage()
   const menu = topPageData.get('menu')
   const mainImage = topPageData.get('mainImage')

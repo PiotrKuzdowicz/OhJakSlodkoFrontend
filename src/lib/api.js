@@ -82,7 +82,6 @@ export const getPostByTags = async (tag) => {
   return blogData.blogs[0]
 }
 
- 
 export async function getMainBlogs(page,pageSize){
   // GQL queries
  const MAIN_BLOG_QUERY = gql`

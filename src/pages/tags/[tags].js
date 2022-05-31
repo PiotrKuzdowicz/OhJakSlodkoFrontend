@@ -133,8 +133,8 @@ export const getStaticProps = async (context) => {
       menuPosts: menuPosts,
       tags: tags,
       menu: menu,
-      mainImage: mainImage
-    },
+      mainImage: mainImage,
+    }, revalidate: 10, // In seconds
   }
 
 }
