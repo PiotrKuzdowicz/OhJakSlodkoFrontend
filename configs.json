@@ -1,4 +1,4 @@
 {
-    "STRAPI_URL": "http://141.136.42.155:1337",
-    "STRAPI_DOMAIN": "141.136.42.155"
+    "STRAPI_URL": "https://strapi.ohjakslodko.pl",
+    "STRAPI_DOMAIN": "strapi.ohjakslodko.pl"
 }

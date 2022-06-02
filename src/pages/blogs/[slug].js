@@ -56,7 +56,7 @@ const BlogPage = ({ post, previewMode, menuPosts, menu, mainImage,recentBlogsDat
 
       <div className="relative  pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8 flex  flex-col">
         <TopPage menu={menu} mainImage={mainImage} />
-        <div className='flex center mx-auto mt-10 md:w-5/6 lg:w-5/6 xl:w-4/6 2xl:w-4/6'>
+        <div className='flex center mx-auto mt-10 sd:w-4/6 md:w-5/6 lg:w-5/6 xl:w-4/6 2xl:w-4/6'>
           <motion.div initial="initial" animate="animate" exit={{ opacity: 0 }} variants={stagger} className="mx-auto w-screen md:w-3/4 ">
             <Blog post={post} recentBlogsData={recentBlogsData} />
           </motion.div>
