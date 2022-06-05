@@ -39,10 +39,10 @@ export default function Blog(props) {
             <a href={tiktokUrl}><FontAwesomeIcon icon={faTiktok} className='text-3xl ml-5' color="#2c2c2c" /></a>
           }
         </div>
-        <div className="mt-6 flex  text-gray-500">
+        <div className="mt-6 flex flex-wrap text-gray-500 w-full">
           {tagsMap.map((tag, index) => (
 
-            <a key={tag} href={`/tags/${tag.replace("#", "")}`} className="mx-2">{tag}</a>
+            <a  key={tag} href={`/tags/${tag.replace("#", "")}`} className="mx-2">{tag}</a>
           ))}
         </div>
       </div>
@@ -50,16 +50,16 @@ export default function Blog(props) {
       {recentBlogsData.blogs.data.length >0 &&
         <>
           <h5 className="text-center text-3xl mt-10">Podobne przepisy</h5>
-          <div class="mt-5 mx-auto flex">
+          <div class="mt-5 mx-auto flex flex-wrap w-full justify-center  px-1">
 
             {recentBlogsData.blogs.data.map((recentBlog) => (
-              <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm dark:bg-gray-800 dark:border-gray-700 mx-5 mt-5">
+              <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm dark:bg-gray-800 dark:border-gray-700 xl:mx-4 md:mx-0 mt-5 xl:w-1/4 md:w-1/3 sm:w-full">
                 <a href={`/blogs/` + recentBlog.attributes.slug}>
                   <img class="rounded-t-lg" src={urlBuilder(recentBlog.attributes.image.data[0].attributes.url)} alt={recentBlog.attributes.title} />
                 </a>
-                <div class="p-5">
-                  <a href={`/blogs/` + recentBlog.attributes.slug}>
-                    <h5 class="text-gray-900 font-bold text-center text-2xl tracking-tight mb-2 dark:text-white">{recentBlog.attributes.title}</h5>
+                <div class="p-5 w-full">
+                  <a className="w-full" href={`/blogs/` + recentBlog.attributes.slug}>
+                    <h5 class="text-gray-900 font-bold text-center tracking-tight mb-2 dark:text-white sm:text-sm">{recentBlog.attributes.title}</h5>
                   </a>
                 </div>
               </div>

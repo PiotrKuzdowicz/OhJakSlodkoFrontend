@@ -42,8 +42,8 @@ const BlogPage = ({ posts, previewMode, menuPosts, tags, menu, mainImage }) => {
   return (
     <>
       <Head>
-        <script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script>
-        <script src="../../node_modules/flowbite/src/flowbite.js"></script>
+        {/* <script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script>
+        <script src="../../node_modules/flowbite/src/flowbite.js"></script> */}
         <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.5/dist/flowbite.min.css" />
         <title>Oh jak słodko</title>
       </Head>

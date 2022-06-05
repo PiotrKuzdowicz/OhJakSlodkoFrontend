@@ -139,7 +139,7 @@ export async function getMenuBlogs(){
  const RIGHT_MENU_BLOGS = gql`
 
 query getPostForMenu{
-  blogs(pagination:{limit:5} sort: "published:asc") {
+  blogs(pagination:{limit:5} sort: "published:desc") {
     data {
       attributes {
         title

@@ -19,9 +19,10 @@ module.exports = {
     require('flowbite/plugin'),
     function ({ addVariant }) {
       addVariant('child', '& > *');
-  }
+    }
   ],
   content: [
-    "../node_modules/flowbite/**/*.js"
-]
+    // ...
+    'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}'
+  ]
 }

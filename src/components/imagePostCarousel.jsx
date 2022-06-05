@@ -5,9 +5,9 @@ export default function ImagePostCarousel(props) {
     return (<>
         {image.data.length > 1 &&
 
-            <div id="default-carousel" class="relative " data-carousel="static">
+            <div id="default-carousel" class="relative px-2 h-full " data-carousel="static">
                 {/* <!-- Carousel wrapper --> */}
-                <div class="overflow-hidden relative rounded-lg h-screen  ">
+                <div class="overflow-hidden relative rounded-lg h-screen ">
 
                     {/* <!-- Items --> */}
                     {image.data.map((item) => (
