@@ -67,7 +67,7 @@ const BlogPage = ({ posts, previewMode, menuPosts, tags, menu, mainImage }) => {
 }
 export default BlogPage;
 
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async (context) => {
   const topPageData = await getTopPage()
   const menu = topPageData.get('menu')
   const mainImage = topPageData.get('mainImage')
@@ -126,20 +126,8 @@ export const getStaticProps = async (context) => {
     },
     preview: context.preview,
   })
-  return {
-    props: {
-      posts: blogData.blogs.data,
-      previewMode: previewMode,
-      menuPosts: menuPosts,
-      tags: tags,
-      menu: menu,
-      mainImage: mainImage,
-    }, revalidate: 10, // In seconds
-  }
 
-}
-export async function getStaticPaths() {
-  // Blogs Data
+ // Blogs Data
   // GQL queries
   const BLOGS_SLUGS_QUERY = gql`
     query getSlug{
@@ -165,12 +153,54 @@ export async function getStaticPaths() {
 
   )
 
-  // blogSlugsData.blogs.data.map(
-  //   slug => blogsParams.push({ params: slug.attributes.slug }))
+
+
   return {
-    paths: blogsParams,
-    fallback: false
-  };
+    props: {
+      posts: blogData.blogs.data,
+      previewMode: previewMode,
+      menuPosts: menuPosts,
+      tags: tags,
+      menu: menu,
+      mainImage: mainImage,
+      paths: blogsParams,
+    }
+  }
+
 }
+// export async function getStaticPaths() {
+//   // Blogs Data
+//   // GQL queries
+//   const BLOGS_SLUGS_QUERY = gql`
+//     query getSlug{
+//       blogs{
+//         data{
+//           attributes{
+//             tags
+//           }
+//         }
+//       }
+//     }
+//     `
+//   const { data: blogSlugsData } = await apolloClient.query({
+//     query: BLOGS_SLUGS_QUERY
+//   })
+//   let blogsParams = []
+//   blogSlugsData.blogs.data.map((data) => (
+
+//     data.attributes.tags.split(" ").map((tag, index) => (
+
+//       blogsParams.push({ params: { tags: tag.replace("#", "") } }))
+//     ))
+
+//   )
+
+//   // blogSlugsData.blogs.data.map(
+//   //   slug => blogsParams.push({ params: slug.attributes.slug }))
+//   return {
+//     paths: blogsParams,
+//     fallback: false
+//   };
+// }
 
 

@@ -67,7 +67,7 @@ const BlogPage = ({ posts, previewMode, menuPosts, category, menu, mainImage, ca
 }
 export default BlogPage;
 
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async (context) => {
   const topPageData = await getTopPage()
   const menu = topPageData.get('menu')
   const mainImage = topPageData.get('mainImage')
@@ -156,22 +156,8 @@ export const getStaticProps = async (context) => {
     preview: context.preview,
   })
   const categoryName = categorySlug.categories.data.length > 0 ? categorySlug.categories.data : null
-  return {
-    props: {
-      posts: blogData.blogs.data,
-      previewMode: previewMode,
-      menuPosts: menuPosts,
-      category: category,
-      categoryName: categoryName,
-      menu: menu,
-      mainImage: mainImage,
-      
-    }, revalidate: 10, // In seconds
-  }
 
-}
-export async function getStaticPaths() {
-  // Blogs Data
+ // Blogs Data
   // GQL queries
   const BLOGS_SLUGS_QUERY = gql`
   query getSlugCategory{
@@ -193,9 +179,16 @@ export async function getStaticPaths() {
   )
 
   return {
-    paths: blogsParams,
-    fallback: false
-  };
+    props: {
+      posts: blogData.blogs.data,
+      previewMode: previewMode,
+      menuPosts: menuPosts,
+      category: category,
+      categoryName: categoryName,
+      menu: menu,
+      mainImage: mainImage,
+      paths: blogsParams,
+    },
+  }
+
 }
-
-

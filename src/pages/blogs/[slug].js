@@ -71,7 +71,7 @@ const BlogPage = ({ post, previewMode, menuPosts, menu, mainImage,recentBlogsDat
 }
 export default BlogPage;
 
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async (context) => {
   const topPageData = await getTopPage()
   const menu = topPageData.get('menu')
   const mainImage = topPageData.get('mainImage')
@@ -84,23 +84,8 @@ export const getStaticProps = async (context) => {
   const blogData = await getDataForBlogPage(slug,previewMode,context)
   const category = blogData.blogs.data[0].attributes.category.data.attributes.name
   const recentBlogsData = await getRecentBlogsDataForBlogPage(slug,previewMode,context,category)
-  return {
-    props: {
-      post: blogData.blogs.data[0].attributes,
-      previewMode: previewMode,
-      menuPosts: menuPosts,
-      menu: menu,
-      mainImage: mainImage,
-      recentBlogsData: recentBlogsData,
-     
 
-
-    }, revalidate: 10, // In seconds
-  }
-
-}
-export async function getStaticPaths() {
-  // Blogs Data
+ // Blogs Data
   // GQL queries
   const BLOGS_SLUGS_QUERY = gql`
     query getSlug{
@@ -120,10 +105,23 @@ export async function getStaticPaths() {
   blogSlugsData.blogs.data.map((data) => (blogsParams.push({ params: { slug: data.attributes.slug } })))
 
 
+
   return {
-    paths: blogsParams,
-    fallback: false
-  };
+    props: {
+      post: blogData.blogs.data[0].attributes,
+      previewMode: previewMode,
+      menuPosts: menuPosts,
+      menu: menu,
+      mainImage: mainImage,
+      recentBlogsData: recentBlogsData,
+      paths:blogsParams
+     
+
+
+    },
+  }
+
 }
+
 
 
